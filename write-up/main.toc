@@ -1,0 +1,34 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Categorical Renormalization Group Flows}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Functoriality and structure preserving mappings}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Nematic order and RG in field space}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Example of RG flow computation with Rust}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Curved geometry and stochastic dynamics}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Methods}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Categorical foundations}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Functorial Beris-Edwards model on smooth manifolds}{7}{subsection.3.2}%
+\contentsline {paragraph}{Local frame coordinates.}{7}{subsection.3.2}%
+\contentsline {paragraph}{Categorical RG and Compositionality.}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Examples}{8}{section.4}%
+\contentsline {paragraph}{Defect Annihilation as Morphism.}{8}{tcb@cnt@example.1}%
+\contentsline {paragraph}{Coordinate Computation.}{8}{tcb@cnt@example.1}%
+\contentsline {paragraph}{RG Flow Outcome.}{9}{tcb@cnt@example.1}%
+\contentsline {paragraph}{Energy functional.}{9}{tcb@cnt@example.2}%
+\contentsline {paragraph}{Categorical structure.}{9}{tcb@cnt@example.2}%
+\contentsline {paragraph}{Symmetric ansatz.}{9}{tcb@cnt@example.3}%
+\contentsline {paragraph}{Gradient term.}{10}{tcb@cnt@example.3}%
+\contentsline {paragraph}{RG flow and smoothing.}{10}{tcb@cnt@example.3}%
+\contentsline {paragraph}{Categorical mapping.}{10}{tcb@cnt@example.3}%
+\contentsline {paragraph}{RG flow as a functor.}{10}{tcb@cnt@example.4}%
+\contentsline {paragraph}{Defect tensor as a functor.}{10}{tcb@cnt@example.4}%
+\contentsline {paragraph}{Naturality condition.}{11}{tcb@cnt@example.4}%
+\contentsline {paragraph}{Spectral decomposition of the defect tensor.}{11}{tcb@cnt@example.4}%
+\contentsline {paragraph}{Defect tensor flow.}{11}{tcb@cnt@example.5}%
+\contentsline {paragraph}{Naturality of defect flow.}{11}{tcb@cnt@example.5}%
+\contentsline {paragraph}{Interpretation.}{12}{tcb@cnt@example.5}%
+\contentsline {paragraph}{Preliminary spectral diagnostics.}{12}{tcb@cnt@example.5}%
+\contentsline {paragraph}{Spectral norm.}{12}{tcb@cnt@example.6}%
+\contentsline {paragraph}{Categorical interpretation.}{13}{tcb@cnt@example.6}%
+\contentsline {paragraph}{Conclusion.}{13}{tcb@cnt@example.6}%
+\contentsline {section}{\numberline {5}Working End (No conclusion yet)}{13}{section.5}%

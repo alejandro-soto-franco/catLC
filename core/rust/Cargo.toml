@@ -1,0 +1,26 @@
+[package]
+name = "catlc"
+version = "0.1.0"
+edition = "2021"
+authors = ["Alejandro Soto Franco"]
+description = "Category theoretic renormalization group flow calculator for liquid crystals"
+
+[dependencies]
+nalgebra = "0.32.3"      # Linear algebra
+ndarray = "0.15.6"       # N-dimensional arrays
+rand = "0.8.5"           # Random number generation
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rayon = "1.7.0"          # Parallel computation
+itertools = "0.11.0"     # Iterator utilities
+thiserror = "1.0.43"     # Error handling
+log = "0.4.19"           # Logging
+env_logger = "0.10.0"    # Environment-based logging
+
+[lib]
+name = "catlc"
+path = "src/lib.rs"
+
+[[bin]]
+name = "catlc_cli"
+path = "src/main.rs"

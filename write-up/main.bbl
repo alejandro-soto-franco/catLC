@@ -27,6 +27,23 @@ Cardy, J. (1996).
 \newblock {\em Scaling and Renormalization in Statistical Physics}.
 \newblock Cambridge University Press, Cambridge.
 
+\bibitem[Chow and Knopf, 2004]{chow2004ricci}
+Chow, B. and Knopf, D. (2004).
+\newblock {\em The Ricci Flow: An Introduction}, volume 110 of {\em
+  Mathematical Surveys and Monographs}.
+\newblock American Mathematical Society.
+
+\bibitem[Cotter et~al., 2013]{cotter2013bayesian}
+Cotter, S.~L., Roberts, G.~O., Stuart, A.~M., and White, D. (2013).
+\newblock Bayesian inverse problems for functions and applications to fluid
+  mechanics.
+\newblock {\em Inverse Problems}, 29(10):104008.
+
+\bibitem[Damgaard and Huffel, 1987]{damgaard1987stochastic}
+Damgaard, P.~H. and Huffel, H. (1987).
+\newblock Stochastic quantization.
+\newblock {\em Physics Reports}, 152(5):227--398.
+
 \bibitem[de~Gennes and Prost, 1993]{degennes1993physics}
 de~Gennes, P.-G. and Prost, J. (1993).
 \newblock {\em The Physics of Liquid Crystals}.
@@ -42,11 +59,6 @@ E, W. and Engquist, B. (2003).
 \newblock Multiscale modeling and computation.
 \newblock In E, W. and Engquist, B., editors, {\em Multiscale Modeling and
   Simulation}, pages 3--20. Springer.
-
-\bibitem[Feynman, 1965]{feynman1965character}
-Feynman, R.~P. (1965).
-\newblock {\em The Character of Physical Law}.
-\newblock MIT Press, Cambridge, MA.
 
 \bibitem[Freed, 1995]{freed1995chern}
 Freed, D.~S. (1995).
@@ -88,6 +100,19 @@ Ma, S.-K. (1976).
 Mac~Lane, S. (1971).
 \newblock {\em Categories for the Working Mathematician}.
 \newblock Springer-Verlag, New York.
+
+\bibitem[Morgan and Tian, 2007]{morgan2007ricci}
+Morgan, J. and Tian, G. (2007).
+\newblock {\em Ricci Flow and the Poincaré Conjecture}, volume~3 of {\em Clay
+  Mathematics Monographs}.
+\newblock American Mathematical Society.
+
+\bibitem[Schimming and Selinger, 2025]{schimming2025defect}
+Schimming, J.~P. and Selinger, J.~V. (2025).
+\newblock Topology and dynamics of disclinations in three-dimensional nematic
+  liquid crystals.
+\newblock {\em arXiv preprint arXiv:2212.10620}.
+\newblock Version 1.
 
 \bibitem[Segal, 2004]{segal2004definition}
 Segal, G. (2004).
