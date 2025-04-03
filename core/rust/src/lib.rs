@@ -1,18 +1,19 @@
-//! # catLC: Categorical Liquid Crystals
+//! catLC: Category Theory-based Liquid Crystal Analysis
 //!
-//! A category theoretic framework for renormalization group flows in liquid crystals.
+//! This library provides tools for analyzing liquid crystal systems
+//! at different scales using category theory and renormalization group flow.
 
 pub mod category;
 pub mod functor;
 pub mod rg_flow;
-pub mod manifold;
 pub mod microscopic;
 pub mod mesoscopic;
 pub mod macroscopic;
+pub mod manifold;
 pub mod visualization_data;
 
-/// Re-export commonly used types
-pub use category::{Category, Object, Morphism, ComposableMorphisms};
-pub use functor::{Functor, NaturalTransformation};
-pub use rg_flow::{RGFlow, RGFixedPoint};
-pub use manifold::{Manifold, TangentSpace, CurvedSpace};
+// Re-export key types for convenience
+pub use category::{Category, Object, Morphism, FinCategory};
+pub use functor::{Functor, ConcreteFunctor};
+pub use rg_flow::{RGFlow, ParameterSpace};
+pub use manifold::{Manifold, CurvedSpace, ManifoldPoint, TangentSpace};
