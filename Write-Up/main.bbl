@@ -1,0 +1,116 @@
+\begin{thebibliography}{}
+
+\bibitem[Abramsky and Coecke, 2004]{abramsky2004categorical}
+Abramsky, S. and Coecke, B. (2004).
+\newblock A categorical semantics of quantum protocols.
+\newblock In {\em Proceedings. 19th Annual IEEE Symposium on Logic in Computer
+  Science}, pages 415--425. IEEE.
+
+\bibitem[Atiyah, 1988]{atiyah1988topological}
+Atiyah, M. (1988).
+\newblock Topological quantum field theories.
+\newblock {\em Publications Mathématiques de l'IHÉS}, 68:175--186.
+
+\bibitem[Baez and Schreiber, 2007]{baez2007higher}
+Baez, J.~C. and Schreiber, U. (2007).
+\newblock Higher gauge theory.
+\newblock In {\em Categories in Algebra, Geometry and Mathematical Physics},
+  pages 7--30. American Mathematical Society.
+
+\bibitem[Baez and Stay, 2011]{baez2011rosetta}
+Baez, J.~C. and Stay, M. (2011).
+\newblock Physics, topology, logic and computation: A rosetta stone.
+\newblock In {\em New Structures for Physics}, pages 95--172. Springer.
+
+\bibitem[Cardy, 1996]{cardy1996scaling}
+Cardy, J. (1996).
+\newblock {\em Scaling and Renormalization in Statistical Physics}.
+\newblock Cambridge University Press, Cambridge.
+
+\bibitem[de~Gennes and Prost, 1993]{degennes1993physics}
+de~Gennes, P.-G. and Prost, J. (1993).
+\newblock {\em The Physics of Liquid Crystals}.
+\newblock Oxford University Press, Oxford.
+
+\bibitem[Deutsch, 1997]{deutsch1997fabric}
+Deutsch, D. (1997).
+\newblock {\em The Fabric of Reality}.
+\newblock Penguin Books, London.
+
+\bibitem[E and Engquist, 2003]{e2003multiscale}
+E, W. and Engquist, B. (2003).
+\newblock Multiscale modeling and computation.
+\newblock In E, W. and Engquist, B., editors, {\em Multiscale Modeling and
+  Simulation}, pages 3--20. Springer.
+
+\bibitem[Feynman, 1965]{feynman1965character}
+Feynman, R.~P. (1965).
+\newblock {\em The Character of Physical Law}.
+\newblock MIT Press, Cambridge, MA.
+
+\bibitem[Freed, 1995]{freed1995chern}
+Freed, D.~S. (1995).
+\newblock Classical chern-simons theory. part 1.
+\newblock {\em Advances in Mathematics}, 113(2):237--303.
+
+\bibitem[Grayson, 1987]{grayson1987shortening}
+Grayson, M.~A. (1987).
+\newblock The heat equation shrinks embedded plane curves to round points.
+\newblock {\em Journal of Differential Geometry}, 26(2):285--314.
+
+\bibitem[Guillemin and Sternberg, 1984]{guillemin1984symplectic}
+Guillemin, V. and Sternberg, S. (1984).
+\newblock {\em Symplectic Techniques in Physics}.
+\newblock Cambridge University Press.
+
+\bibitem[Hamilton, 1982]{hamilton1982three}
+Hamilton, R.~S. (1982).
+\newblock Three-manifolds with positive ricci curvature.
+\newblock {\em Journal of Differential Geometry}, 17(2):255--306.
+
+\bibitem[Hudak, 1989]{hudak1989conception}
+Hudak, P. (1989).
+\newblock Conception, evolution, and application of functional programming
+  languages.
+\newblock In {\em ACM SIGPLAN Notices}, volume~24, pages 75--83. ACM.
+
+\bibitem[Levin et~al., 2009]{levin2009markov}
+Levin, D.~A., Peres, Y., and Wilmer, E.~L. (2009).
+\newblock {\em Markov Chains and Mixing Times}.
+\newblock American Mathematical Society, Providence, RI.
+
+\bibitem[Ma, 1976]{ma1976modern}
+Ma, S.-K. (1976).
+\newblock {\em Modern Theory of Critical Phenomena}.
+\newblock Benjamin, Reading, MA.
+
+\bibitem[Mac~Lane, 1971]{maclane1971categories}
+Mac~Lane, S. (1971).
+\newblock {\em Categories for the Working Mathematician}.
+\newblock Springer-Verlag, New York.
+
+\bibitem[Segal, 2004]{segal2004definition}
+Segal, G. (2004).
+\newblock The definition of conformal field theory.
+\newblock In Tillmann, U., editor, {\em Topology, Geometry and Quantum Field
+  Theory: Proceedings of the 2002 Oxford Symposium in Honour of the 60th
+  Birthday of Graeme Segal}, volume 308 of {\em London Mathematical Society
+  Lecture Note Series}, pages 421--577. Cambridge University Press.
+
+\bibitem[Selinger, 2007]{selinger2007dagger}
+Selinger, P. (2007).
+\newblock Dagger compact closed categories and completely positive maps.
+\newblock {\em Electronic Notes in Theoretical Computer Science}, 170:139--163.
+
+\bibitem[Spivak, 2014]{spivak2014category}
+Spivak, D.~I. (2014).
+\newblock {\em Category Theory for the Sciences}.
+\newblock MIT Press, Cambridge, MA.
+
+\bibitem[Weinstein, 1981]{weinstein1981symplectic}
+Weinstein, A. (1981).
+\newblock Symplectic categories.
+\newblock In {\em Differential Geometric Methods in Mathematical Physics},
+  pages 45--51. Springer.
+
+\end{thebibliography}
