@@ -19,6 +19,9 @@ pub enum RGFlowError {
     
     #[error("Category error: {0}")]
     CategoryError(#[from] CategoryError),
+    
+    #[error("Dimension mismatch: expected {expected}, got {actual}")]
+    DimensionMismatch { expected: usize, actual: usize },
 }
 
 /// Trait for parameter spaces that can be used in RG flows
@@ -26,14 +29,22 @@ pub trait ParameterSpace: Clone + Debug {
     /// Get the dimension of the parameter space
     fn dimension(&self) -> usize;
     
+    /// Get the spatial dimension of the system
+    fn spatial_dimension(&self) -> usize;
+    
     /// Get the parameters as a vector
     fn as_vector(&self) -> DVector<f64>;
     
     /// Create from a vector of parameters
-    fn from_vector(vec: DVector<f64>) -> Result<Self, RGFlowError>;
+    fn from_vector(vec: DVector<f64>, dim: usize) -> Result<Self, RGFlowError>;
     
     /// Distance between two points in parameter space
     fn distance(&self, other: &Self) -> f64;
+    
+    /// Check if the parameter space is compatible with a given spatial dimension
+    fn is_compatible_with_dimension(&self, dim: usize) -> bool {
+        self.spatial_dimension() == dim
+    }
 }
 
 /// A fixed point of an RG flow
@@ -50,18 +61,42 @@ pub struct RGFixedPoint<P: ParameterSpace> {
     
     /// Universality class
     pub universality_class: Option<String>,
+    
+    /// Spatial dimension
+    pub dimension: usize,
 }
 
 /// Trait representing a renormalization group flow
 pub trait RGFlow<P: ParameterSpace>: Debug {
+    /// Get the spatial dimension this RG flow operates in
+    fn spatial_dimension(&self) -> usize;
+
     /// Perform a single RG transformation step
-    fn step(&self, params: &P) -> Result<P, RGFlowError>;
+    fn step(&self, params: &P) -> Result<P, RGFlowError> {
+        if !params.is_compatible_with_dimension(self.spatial_dimension()) {
+            return Err(RGFlowError::DimensionMismatch { 
+                expected: self.spatial_dimension(), 
+                actual: params.spatial_dimension() 
+            });
+        }
+        self.do_step(params)
+    }
+    
+    /// Internal implementation of the RG step
+    fn do_step(&self, params: &P) -> Result<P, RGFlowError>;
     
     /// Iterate the RG flow for a specified number of steps
     fn iterate(&self, initial: &P, steps: usize) -> Result<P, RGFlowError> {
+        if !initial.is_compatible_with_dimension(self.spatial_dimension()) {
+            return Err(RGFlowError::DimensionMismatch { 
+                expected: self.spatial_dimension(), 
+                actual: initial.spatial_dimension() 
+            });
+        }
+        
         let mut current = initial.clone();
         for _ in 0..steps {
-            current = self.step(&current)?;
+            current = self.do_step(&current)?;
         }
         Ok(current)
     }
@@ -73,10 +108,17 @@ pub trait RGFlow<P: ParameterSpace>: Debug {
         max_iterations: usize,
         tolerance: f64
     ) -> Result<RGFixedPoint<P>, RGFlowError> {
+        if !initial.is_compatible_with_dimension(self.spatial_dimension()) {
+            return Err(RGFlowError::DimensionMismatch { 
+                expected: self.spatial_dimension(), 
+                actual: initial.spatial_dimension() 
+            });
+        }
+        
         let mut current = initial.clone();
         
-        for _ in 0..max_iterations {
-            let next = self.step(&current)?;
+        for _ in max_iterations {
+            let next = self.do_step(&current)?;
             if next.distance(&current) < tolerance {
                 // We found a fixed point; now analyze it
                 return Ok(self.analyze_fixed_point(&next)?);
@@ -96,7 +138,11 @@ pub trait RGFlow<P: ParameterSpace>: Debug {
 
 /// A concrete implementation of RG flow
 #[derive(Debug)]
-pub struct ConcreteRGFlow<P: ParameterSpace, C: Category, F: Functor<Source = C, Target = C>> {
+pub struct ConcreteRGFlow<P: ParameterSpace, C: Category, F: Functor> 
+where
+    F::Source: Category,
+    F::Target: Category,
+{
     /// Name of this RG flow
     name: String,
     
@@ -112,11 +158,17 @@ pub struct ConcreteRGFlow<P: ParameterSpace, C: Category, F: Functor<Source = C,
     /// Implementation of the beta function
     beta_fn: fn(&P) -> Result<DVector<f64>, RGFlowError>,
     
+    /// Spatial dimension
+    dimension: usize,
+    
     _phantom: PhantomData<P>,
 }
 
-impl<P: ParameterSpace, C: Category, F: Functor<Source = C, Target = C>> 
-    ConcreteRGFlow<P, C, F> {
+impl<P: ParameterSpace, C: Category, F: Functor> ConcreteRGFlow<P, C, F> 
+where
+    F::Source: Category,
+    F::Target: Category,
+{
     /// Create a new concrete RG flow
     pub fn new(
         name: String,
@@ -124,6 +176,7 @@ impl<P: ParameterSpace, C: Category, F: Functor<Source = C, Target = C>>
         functor: F,
         step_fn: fn(&P) -> Result<P, RGFlowError>,
         beta_fn: fn(&P) -> Result<DVector<f64>, RGFlowError>,
+        dimension: usize,
     ) -> Self {
         Self {
             name,
@@ -131,6 +184,7 @@ impl<P: ParameterSpace, C: Category, F: Functor<Source = C, Target = C>>
             functor,
             step_fn,
             beta_fn,
+            dimension,
             _phantom: PhantomData,
         }
     }
@@ -146,9 +200,16 @@ impl<P: ParameterSpace, C: Category, F: Functor<Source = C, Target = C>>
     }
 }
 
-impl<P: ParameterSpace, C: Category, F: Functor<Source = C, Target = C>> 
-    RGFlow<P> for ConcreteRGFlow<P, C, F> {
-    fn step(&self, params: &P) -> Result<P, RGFlowError> {
+impl<P: ParameterSpace, C: Category, F: Functor> RGFlow<P> for ConcreteRGFlow<P, C, F> 
+where
+    F::Source: Category,
+    F::Target: Category,
+{
+    fn spatial_dimension(&self) -> usize {
+        self.dimension
+    }
+    
+    fn do_step(&self, params: &P) -> Result<P, RGFlowError> {
         (self.step_fn)(params)
     }
     
@@ -168,10 +229,17 @@ impl<P: ParameterSpace, C: Category, F: Functor<Source = C, Target = C>>
             critical_exponents: vec![0.1, 0.2], // Placeholder values
             classification: "stable".to_string(),
             universality_class: Some("Ising".to_string()),
+            dimension: self.dimension,
         })
     }
     
     fn beta_function(&self, params: &P) -> Result<DVector<f64>, RGFlowError> {
+        if !params.is_compatible_with_dimension(self.dimension) {
+            return Err(RGFlowError::DimensionMismatch { 
+                expected: self.dimension, 
+                actual: params.spatial_dimension() 
+            });
+        }
         (self.beta_fn)(params)
     }
 }

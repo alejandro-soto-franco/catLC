@@ -1,8 +1,8 @@
-use crate::category::{Category, CategoryError, Morphism, Object};
+use crate::category::{Category, CategoryError};
 use std::fmt::Debug;
 
 /// Trait representing a functor between categories
-pub trait Functor {
+pub trait Functor: Debug {
     /// Source category
     type Source: Category;
     
