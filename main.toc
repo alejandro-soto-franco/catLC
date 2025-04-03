@@ -1,0 +1,11 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Categorical renormalization group flows}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Categorical RG transformations}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Computation of RG flow}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Rust skeleton for RG transformation step}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Iterative Flow and Fixed Points}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}On functorial RG transformations}{5}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Methods}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Construction}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Markov Chain Dynamics on Evolving Surfaces}{10}{subsection.3.2}%
